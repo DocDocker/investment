@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2d426824-762b-4081-abed-f0b4704f4ad7" name="Default Changelist" comment="The first version of application">
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/PortfolioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Portfolio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/Application/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/PortfolioController/editPortfolio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/PortfolioController/newPortfolio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/PortfolioController/showPortfolio.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/errors/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/errors/500.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/dependencies.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/messages.ru" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf/routes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/evolutions/default.1.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/files/manual.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/files/wiki.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/images/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/documentation/welcome.textile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/investingByKarnilaev.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/investingByKarnilaev.ipr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/investingByKarnilaev.iws" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/javascripts/jquery-1.6.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Application.test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/ApplicationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/BasicTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/data.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1mWu0zCWcltwBH2goLPFKHvs22E" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/Portfolios" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in investingByKarnilaev">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="run" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="liberica-11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="play.server.Server" />
+      <module name="investingByKarnilaev" />
+      <option name="PROGRAM_PARAMETERS" value="-Dapplication.path=&quot;.&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in investingByKarnilaev" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="investingByKarnilaev" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in investingByKarnilaev" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2d426824-762b-4081-abed-f0b4704f4ad7" name="Default Changelist" comment="" />
+      <created>1609621448880</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609621448880</updated>
+      <workItem from="1609621450015" duration="29000" />
+      <workItem from="1609621489396" duration="270000" />
+      <workItem from="1609621813296" duration="672000" />
+      <workItem from="1609622500835" duration="527000" />
+      <workItem from="1609662477522" duration="1852000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="routes" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ru" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="The first version of application" />
+    <option name="LAST_COMMIT_MESSAGE" value="The first version of application" />
+  </component>
+</project>

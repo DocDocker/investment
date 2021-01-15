@@ -1,0 +1,19 @@
+
+# Source code
+*.bash            text eol=lf
+*.css             text
+*.htm             text diff=html
+*.html            text diff=html
+*.js              text
+*.json            text
+*.jsx             text
+*.less            text
+*.ls              text
+*.sass            text
+*.scss            text diff=css
+*.sql             text
+*.styl            text
+*.tag             text
+*.ts              text
+*.tsx             text
+*.xml             text

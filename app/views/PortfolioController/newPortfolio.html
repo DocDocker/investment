@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'Новый портфель: инвестиции by Karnilaev' /}
+
+#{form @PortfolioController.savePortfolio()}
+    Наименование: <input type="text" name="portfolio.name" /><br />
+    Цель: <input type="number" step=".01" name="portfolio.goal" /><br />
+    Валюта: <select id="currencySelect" name="portfolio.currency.id">
+        #{list items:models.Currency.findAll(), as:'currency'}
+        <option value=${currency.id}>${currency.name}</option>
+        #{/list}
+    </select>
+    <input type="submit" value="Сохранить" />
+#{/form}

@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+# Portfolios
+GET     /portfolios/{<[0-9]+>id}                PortfolioController.showPortfolio
+DELETE  /portfolios/{<[0-9]+>id}                PortfolioController.deletePortfolio
+GET     /portfolios/edit/{<[0-9]+>id}           PortfolioController.editPortfolio
+GET     /portfolios/new                         PortfolioController.newPortfolio
+POST    /portfolios                             PortfolioController.savePortfolio
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Import CRUD routes
+*      /admin                                    module:crud

@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Инвестиции by Karnilaev' /}
+
+<h1>Учет инвестиций by Karnilaev</h1>
+
+#{ifErrors}
+<h3>Чест</h3>
+#{/ifErrors}
+
+<ul>
+    #{list items:portfolios, as:'portfolio' }
+    <li>
+        <a href="@{PortfolioController.showPortfolio(portfolio.id)}">${portfolio.name}</a>
+        <button class="btn btn-second" onclick="document.location.href = '@{PortfolioController.editPortfolio(portfolio.id)}';">
+            Редактировать
+        </button>
+        #{form @PortfolioController.deletePortfolio(portfolio.id), method:'delete'}
+        <button class="btn btn-second" onclick="document.location.href = '@{PortfolioController.deletePortfolio(portfolio.id)}';">
+            Удалить
+        </button>
+        #{/form}
+    </li>
+    #{/list}
+</ul>
+<button type="button" class="btn btn-secondary" onclick="document.location.href = '@{PortfolioController.newPortfolio}';">
+    Добавить портфель
+</button>
