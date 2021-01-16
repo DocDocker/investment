@@ -2,5 +2,4 @@
 
 require:
     - play
-    - play -> docviewer
-    - play -> crud
+    - org.xerial -> sqlite-jdbc 3.34.0

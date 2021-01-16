@@ -4,7 +4,12 @@
 <h1>Учет инвестиций by Karnilaev</h1>
 
 #{ifErrors}
-<h3>Чест</h3>
+<h1>Произошли ошибки…</h1>
+<ul>
+    #{errors}
+    <li>${error}</li>
+    #{/errors}
+</ul>
 #{/ifErrors}
 
 <ul>

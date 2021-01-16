@@ -17,7 +17,8 @@ public class Currency extends Model {
     @Override
     public String toString() {
         return "Currency{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

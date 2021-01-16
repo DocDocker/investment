@@ -1,0 +1,9 @@
+
+Currency(usd):
+  name: USD
+  symbol: $
+
+Portfolio(dream):
+  name: Dream
+  goal: 1000.00
+  currency: usd

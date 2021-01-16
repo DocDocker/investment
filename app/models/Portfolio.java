@@ -2,7 +2,6 @@ package models;
 
 import play.data.validation.*;
 import play.db.jpa.Model;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 
