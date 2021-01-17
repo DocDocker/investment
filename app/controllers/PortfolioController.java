@@ -2,8 +2,6 @@ package controllers;
 
 import models.Currency;
 import models.Portfolio;
-import play.Logger;
-import play.data.validation.Error;
 import play.data.validation.Valid;
 import play.mvc.*;
 
@@ -15,14 +13,18 @@ public class PortfolioController extends Controller {
         render(portfolio);
     }
 
-    public static void newPortfolio() {
-        render();
-    }
-
     public static void editPortfolio(@Valid Long id) {
-        Portfolio portfolio = Portfolio.findById(id);
-        notFoundIfNull(portfolio);
-        render(portfolio);
+        Portfolio portfolio;
+        Currency portfolioCurrency;
+        if (id == 0L) {
+            portfolio = new Portfolio();
+            portfolioCurrency = new Currency();
+        } else {
+            portfolio = Portfolio.findById(id);
+            notFoundIfNull(portfolio);
+            portfolioCurrency = portfolio.currency;
+        }
+        render(portfolio, portfolioCurrency);
     }
 
     public static void deletePortfolio(Long id) {
@@ -37,7 +39,8 @@ public class PortfolioController extends Controller {
         if(validation.hasErrors()) {
             params.flash(); // add http parameters to the flash scope
             validation.keep(); // keep the errors for the next request
-            Application.index();
+            Long portfolioId = (portfolio.id == null) ? 0L : portfolio.id;
+            editPortfolio(portfolioId);
         }
         portfolio.save();
         Application.index();

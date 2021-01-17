@@ -6,10 +6,10 @@
 GET     /                                       Application.index
 
 # Portfolios
+GET     /portfolios/new                         PortfolioController.editPortfolio(id:'0')
 GET     /portfolios/{<[0-9]+>id}                PortfolioController.showPortfolio
 DELETE  /portfolios/{<[0-9]+>id}                PortfolioController.deletePortfolio
 GET     /portfolios/edit/{<[0-9]+>id}           PortfolioController.editPortfolio
-GET     /portfolios/new                         PortfolioController.newPortfolio
 POST    /portfolios                             PortfolioController.savePortfolio
 
 # Ignore favicon requests

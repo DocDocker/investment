@@ -1,32 +1,49 @@
 #{extends 'main.html' /}
 #{set title:'Инвестиции by Karnilaev' /}
 
-<h1>Учет инвестиций by Karnilaev</h1>
+<div class="container">
+    <h1>Учет инвестиций by Karnilaev</h1>
 
-#{ifErrors}
-<h1>Произошли ошибки…</h1>
-<ul>
-    #{errors}
-    <li>${error}</li>
-    #{/errors}
-</ul>
-#{/ifErrors}
+    <div class="portfolio-cards row row-cols-1 row-cols-md-3">
+        #{ list items:portfolios, as:'portfolio' }
+        <div class="col mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <a href="@{PortfolioController.showPortfolio(portfolio.id)}">
+                            ${portfolio.name}
+                        </a>
+                        <div class="dropdown portfolio-buttons">
+                            %{ String id = "dropdownPortfolio" + portfolio.id; }%
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="${id}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu" aria-labelledby="${id}">
+                                <button type="button" class="dropdown-item" onclick="document.location.href = '@{PortfolioController.editPortfolio(portfolio.id)}';">
+                                    <svg class="bi" width="1em" height="1em" fill="currentColor">
+                                        <use xlink:href="@{'/public/images/bootstrap-icons.svg'}#pencil" />
+                                    </svg>
+                                    Редактировать
+                                </button>
+                                #{form @PortfolioController.deletePortfolio(portfolio.id), method: 'delete'}
+                                    <button type="submit" class="dropdown-item" onclick="document.location.href = '@{PortfolioController.deletePortfolio(portfolio.id)}';">
+                                        <svg class="bi" width="1em" height="1em" fill="currentColor">
+                                            <use xlink:href="@{'/public/images/bootstrap-icons.svg'}#trash" />
+                                        </svg>
+                                        Удалить
+                                    </button>
+                                #{/form}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-text">
+                        Цель: ${portfolio.goal} ${portfolio.currency.symbol}
+                    </div>
+                </div>
+            </div>
+        </div>
+        #{/list}
+    </div>
 
-<ul>
-    #{list items:portfolios, as:'portfolio' }
-    <li>
-        <a href="@{PortfolioController.showPortfolio(portfolio.id)}">${portfolio.name}</a>
-        <button class="btn btn-second" onclick="document.location.href = '@{PortfolioController.editPortfolio(portfolio.id)}';">
-            Редактировать
-        </button>
-        #{form @PortfolioController.deletePortfolio(portfolio.id), method:'delete'}
-        <button class="btn btn-second" onclick="document.location.href = '@{PortfolioController.deletePortfolio(portfolio.id)}';">
-            Удалить
-        </button>
-        #{/form}
-    </li>
-    #{/list}
-</ul>
-<button type="button" class="btn btn-secondary" onclick="document.location.href = '@{PortfolioController.newPortfolio}';">
-    Добавить портфель
-</button>
+    <button type="button" class="btn btn-secondary" onclick="document.location.href = '@{PortfolioController.editPortfolio(0L)}';">
+        Добавить портфель
+    </button>
+</div>

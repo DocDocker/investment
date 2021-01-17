@@ -1,18 +1,87 @@
 #{extends 'main.html' /}
 #{set title:'Новый портфель: инвестиции by Karnilaev' /}
 
-#{form @PortfolioController.savePortfolio()}
-    <input hidden="hidden" name="portfolio.id" value="${portfolio.id}">
-    Наименование: <input type="text" name="portfolio.name" value="${portfolio.name}" /><br />
-    Цель: <input type="number" step=".01" name="portfolio.goal" value="${portfolio.goal}" /><br />
-    Валюта: <select id="currencySelect" name="portfolio.currency.id">
-        #{list items:models.Currency.findAll(), as:'currency'}
-            <option value=${currency.id}
-            #{if portfolio.currency.id==currency.id}
-                selected=true
-            #{/if}
-            >${currency.name}</option>
-        #{/list}
-    </select>
-    <input type="submit" value="Сохранить" />
-#{/form}
+<div class="container">
+
+    #{ifErrors}
+    <div class="alert alert-danger" role="alert">
+        При сохранении портфеля произошли ошибки.
+    </div>
+    #{/ifErrors}
+    #{form action:@PortfolioController.savePortfolio()}
+        <input hidden="hidden"
+               name="portfolio.id"
+               value="${(flash.contains('portfolio.id')) ? flash['portfolio.id'] : portfolio.id}">
+
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Наименование:</label>
+            <div class="col-sm-10">
+                <input type="text"
+                       class="form-control
+                       #{ifError 'portfolio.name'}
+                            is-invalid
+                       #{/ifError}
+                       "
+                       name="portfolio.name"
+                       aria-describedby="nameFeedback"
+                       id="name"
+                       value="${(flash.contains('portfolio.name')) ? flash['portfolio.name'] : portfolio.name}"
+                       required />
+                #{ifError 'portfolio.name'}
+                    <div id="nameFeedback" class="invalid-feedback">#{ error 'portfolio.name' /}</div>
+                #{/ifError}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="goal" class="col-sm-2 col-form-label">Цель:</label>
+            <div class="col-sm-4">
+                <input type="number" step=".01"
+                       class="form-control
+                             #{ifError 'portfolio.goal'}
+                                is-invalid
+                             #{/ifError}
+                             "
+                       name="portfolio.goal"
+                       aria-describedby="goalFeedback"
+                       id="goal"
+                       value="${(flash.contains('portfolio.goal')) ? flash['portfolio.goal'] : portfolio.goal}"
+                       required />
+                #{ifError 'portfolio.goal'}
+                <div id="goalFeedback" class="invalid-feedback">#{ error 'portfolio.goal' /}</div>
+                #{/ifError}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="currencySelect" class="col-sm-2 col-form-label">Валюта:</label>
+            <div class="col-sm-4">
+                <select id="currencySelect"
+                        class="form-control custom-select
+                              #{ifError 'portfolio.currency'}
+                                 is-invalid
+                              #{/ifError}
+                              "
+                        name="portfolio.currency.id"
+                        required>
+                    #{list items:models.Currency.findAll(), as:'currency'}
+                    <option value=${currency.id}
+                            %{
+                            String currency_id = (flash.contains('portfolio.currency.id')) ? flash['portfolio.currency.id'] : portfolioCurrency.id
+                    }%
+                    #{if currency_id.equals(currency.id.toString())}
+                    selected
+                    #{/if}
+                    >${currency.name}</option>
+                    #{/list}
+                </select>
+                #{ifError 'portfolio.currency'}
+                <div id="currencySelectFeedback" class="invalid-feedback">#{ error 'portfolio.currency' /}</div>
+                #{/ifError}
+            </div>
+        </div>
+        <div class="buttons-block">
+            <input class="btn btn-success" type="submit" value="Сохранить" />
+            <button class="btn btn-light" type="button"
+                    onclick="document.location.href = '@{Application.index}';">Отмена</button>
+        </div>
+    #{/form}
+<div/>

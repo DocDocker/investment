@@ -1,0 +1,23 @@
+
+body {
+    margin-top: 20px;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+.portfolio-cards {
+    margin-top: 60px;
+}
+
+.buttons-block {
+    display: inline;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}

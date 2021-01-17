@@ -1,6 +1,7 @@
 import models.Currency;
 import org.junit.*;
 import org.junit.Before;
+import play.Logger;
 import play.db.jpa.JPA;
 import play.test.*;
 import play.mvc.*;
@@ -26,7 +27,7 @@ public class PortfolioFunctionalTest extends FunctionalTest {
         Response response = GET("/portfolios/new");
         assertIsOk(response);
         assertContentType("text/html", response);
-        assertContentMatch("input type=\"submit\"", response);
+        assertContentMatch("type=\"submit\"", response);
     }
 
     @Test
@@ -37,7 +38,7 @@ public class PortfolioFunctionalTest extends FunctionalTest {
 
         Currency currency = Currency.all().first();
 
-        Map<String, String> params = new HashMap<String, String>();
+        Map<String, String> params = new HashMap<>();
         params.put("portfolio.name", "Dream");
         params.put("portfolio.goal", "999");
         params.put("portfolio.currency.id", currency.id.toString());
@@ -56,7 +57,7 @@ public class PortfolioFunctionalTest extends FunctionalTest {
     @Test
     public void testShouldCheckPortfolioValidationBeforeCreation() {
 
-        Map<String, String> params = new HashMap<String, String>();
+        Map<String, String> params = new HashMap<>();
         params.put("portfolio.name", "Dream");
         params.put("portfolio.goal", "999");
         params.put("portfolio.currency.id", "1");
@@ -67,7 +68,7 @@ public class PortfolioFunctionalTest extends FunctionalTest {
         String location = response.headers.get("Location").value();
         response = GET(location);
         assertIsOk(response);
-        assertContentMatch("not found for id 1", response);
+        assertContentMatch("Required", response);
 
         Assert.assertEquals("portfolios count", Portfolio.count(), 0);
 
